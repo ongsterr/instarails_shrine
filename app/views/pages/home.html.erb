@@ -1,0 +1,15 @@
+<p></p>
+<div class="container">
+    <h1 class="jumbotron">Welcome to Instarails-Shrine</h1>
+    <p>
+        <%= link_to "My Posts" , photos_path %> |
+        <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+        <%= link_to 'Sign In', new_user_session_path %>
+        <% end %>
+    </p>
+    <p>Today we will learn about uploading images using Shrine.</p>
+
+</div>
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container">
+  <h1 class="jumbotron">My InstaPhoto</h1>
+  <p>
+    <div class="d-flex justify-content-between container">
+      <div><%= link_to 'Create New Post', new_photo_path %></div>
+      <div><%= link_to 'Back to Home', root_path %></div>
+    </div>
+  </p>
+  <div class="row">
+      <% @photos.each do |photo| %>
+    <div class="col-md-3">
+        <%= render 'image_card', photo: photo, version_size: :medium %>
+    </div>
+      <% end %>
+  </div>
+</div>

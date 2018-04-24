@@ -1,0 +1,11 @@
+
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1 class="jumbotron">My InstaPhoto</h1>
+  <%= render 'image_card', photo: @photo, version_size: :medium %>
+  
+  <p>
+    <%= link_to 'Edit', edit_photo_path(@photo) %> |
+    <%= link_to 'Back', photos_path %>
+  </p>
+</div>

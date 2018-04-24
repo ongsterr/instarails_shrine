@@ -1,0 +1,19 @@
+
+<div class="card" style="width:250px">
+    
+    <%= link_to photo_path(photo) do %>
+        <%= image_tag photo.image_url(version_size), height: 350, class: 'card-img-top' %>
+    <% end %>
+    <div class="card-body">
+        <div class="card-text">
+            <%= photo.description %>    
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        <%= time_ago_in_words photo.created_at %> |
+        <% liked = photo.liked_by?(current_user) %>
+        <%= link_to liked ? fa_icon('heart') : fa_icon('heart-o'), like_photo_path(photo), method: :patch  %> 
+        <%= photo.likers.count  %>
+        
+    </div>
+</div>
